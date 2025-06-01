@@ -3,7 +3,6 @@
     "name": "my-chat-app",
     "slug": "my-chat-app",
     "version": "1.0.0",
-
     "scheme": "my-chat-app",
     "web": {
       "bundler": "metro",
@@ -17,32 +16,49 @@
         {
           "launchMode": "most-recent"
         }
-      ]
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Allow my-chat-app to access your location while you are using the app."
+        }
+      ],
+      "expo-secure-store"
     ],
     "experiments": {
       "typedRoutes": true,
-
       "tsconfigPaths": true
     },
-
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-
     "userInterfaceStyle": "light",
-
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Allow my-chat-app to access your location while you are using the app."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "com.sheikhrussell123.mychatapp",
+      "permissions": [
+        "ACCESS_FINE_LOCATION"
+      ]
+    },
+    "extra": {
+      "eas": {
+        "projectId": "91c1a20b-78bc-4b3e-895f-b7df92200d51"
       }
     }
   }
